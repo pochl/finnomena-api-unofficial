@@ -2,6 +2,9 @@ url:
   root: https://www.finnomena.com
   fund: /fund
   fund_timeseries_price: https://www.finnomena.com/fn3/api/fund/nav/q
+  all_ports: https://port.finnomena.com/api/port-aggregation/private/customer-ports
+  port: https://www.finnomena.com/wp-content/plugins/finno-nter/services/goal.php
+  historical_orders: https://www.finnomena.com/wp-content/plugins/finno-tws-frontend/services/tws/get-api.php
 
 
 fees_dict:
