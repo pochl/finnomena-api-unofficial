@@ -1,5 +1,6 @@
 __pycache__
 .vscode
 finnomena_api/__pycache__
-finnomena_api/experiment
-finnomena_api/test.py
+build
+dist
+finnomena_api.egg-info
