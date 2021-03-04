@@ -1,4 +1,5 @@
 __pycache__
 .vscode
-experiment
-test.py
+finnomena_api/__pycache__
+finnomena_api/experiment
+finnomena_api/test.py
