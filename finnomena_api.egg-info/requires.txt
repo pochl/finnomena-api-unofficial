@@ -1,5 +1,0 @@
-pandas
-pyyaml
-requests
-BeautifulSoup4
-numpy
