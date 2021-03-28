@@ -6,7 +6,7 @@ import pandas as pd
 import getpass
 import numpy as np
 from bs4 import BeautifulSoup
-from finnomena_api.utils import load_yaml
+from finnomena_api.utils import load_yaml, remove_nonEng
 
 from finnomena_api.keys import keys
 
@@ -151,7 +151,7 @@ class finnomenaAPI:
 
         info['security_name'] = sec_name_found
         info['morningstar_id'] = mstar_id
-        info['feeder_fund'] = feeder_fund
+        info['feeder_fund'] = remove_nonEng(feeder_fund)
         # ----------------------------------------------------------------
         payload = {'fund':mstar_id}
         other_info = requests.get('https://www.finnomena.com/fn3/api/fund/nav/latest', params=payload).json()
