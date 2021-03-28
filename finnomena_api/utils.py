@@ -7,6 +7,6 @@ def load_yaml(path: str):
     return yaml_dict
 
 def remove_nonEng(string):
-    string_list = string_list.split(' ')
+    string_list = string.split(' ')
     res = ' '.join([idx for idx in string_list if not re.findall("[^\u0000-\u05C0\u2100-\u214F]+", idx)])
     return res

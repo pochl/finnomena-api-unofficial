@@ -16,7 +16,7 @@ def requirements(filename):
 
 setup(
     name='finnomena_api',
-    version='1.0.2',
+    version='1.0.3',
     packages=find_packages(),
     url='https://github.com/phachara-laohrenu/finnomena-api-unofficial',
     license='MIT License',
