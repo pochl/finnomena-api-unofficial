@@ -138,20 +138,19 @@ class finnomenaAPI:
 
         sec_name_found = soup.find(id='sec-name')
         if sec_name_found is None:
-            raise ValueError("Cannot find fund with name '" + sec_name_found + "'. Check the list of available funds by method get_fund_list() or make sure fund's code name is spelled correctly")
+            raise ValueError("Cannot find fund with name '" + sec_name + "'. Check the list of available funds by method get_fund_list() or make sure fund's code name is spelled correctly")
         sec_name_found = sec_name_found.text
 
         feeder_fund = soup.find(class_='feeder-fund')
-        if feeder_fund is None:
-            feeder_fund = None
-        else:
+        if feeder_fund is not None:
             feeder_fund = feeder_fund.text
+            feeder_fund = remove_nonEng(feeder_fund)
 
         mstar_id = soup.find(id='sec-id').text
 
         info['security_name'] = sec_name_found
         info['morningstar_id'] = mstar_id
-        info['feeder_fund'] = remove_nonEng(feeder_fund)
+        info['feeder_fund'] = feeder_fund
         # ----------------------------------------------------------------
         payload = {'fund':mstar_id}
         other_info = requests.get('https://www.finnomena.com/fn3/api/fund/nav/latest', params=payload).json()
