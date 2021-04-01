@@ -214,7 +214,7 @@ class finnomenaAPI:
         data = {'date':[], 'price':[]}
         for i in temp_data:
             data['date'].append(i['nav_date'])
-            data['price'].append(i['value'])
+            data['price'].append(float(i['value']))
         
         price = pd.DataFrame(data)
 
